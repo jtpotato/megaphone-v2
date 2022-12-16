@@ -1,6 +1,6 @@
 <script>
+	import "$lib/ui/boba-ui/styles.css";
 	import Header from '$lib/ui/Header.svelte';
-	import '$lib/ui/styles.css';
 </script>
 
 <div class="app">

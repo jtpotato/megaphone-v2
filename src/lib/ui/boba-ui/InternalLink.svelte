@@ -1,10 +1,10 @@
 <script>
-    /**
+	/**
 	 * @type {String}
 	 */
-     export let href;
+	export let href;
 </script>
 
-<a href={href}>
-    <slot />
+<a {href}>
+	<slot />
 </a>

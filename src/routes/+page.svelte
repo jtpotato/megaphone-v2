@@ -1,6 +1,5 @@
 <script>
-	import Link from "$lib/ui/boba-ui/ExternalLink.svelte";
-	import InternalLink from "$lib/ui/boba-ui/InternalLink.svelte";
+	import InternalLink from '$lib/ui/boba-ui/InternalLink.svelte';
 </script>
 
 <svelte:head>
@@ -9,10 +8,10 @@
 </svelte:head>
 
 <div>
-	TODO: REMOVE BEFORE PROD
-	Signed out page: <InternalLink href="/signedout">Signed out page</InternalLink>
+	TODO: REMOVE BEFORE PROD Signed out page: <InternalLink href="/signedout"
+		>Signed out page</InternalLink
+	>
 </div>
 
 <style>
-
 </style>

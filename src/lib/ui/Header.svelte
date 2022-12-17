@@ -1,16 +1,14 @@
 <script>
-	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
-	import github from '$lib/images/github.svg';
 </script>
 
 <header>
 	<nav>
 		<a href="/">Home</a>
 		<a href="/about">About</a>
+		<a href="/login">Sign In</a>
+		<a href="/signup">Sign Up</a>
 	</nav>
 </header>
 
 <style>
-
 </style>

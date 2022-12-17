@@ -1,5 +1,5 @@
 <script>
-	import "$lib/ui/boba-ui/styles.css";
+	import '$lib/ui/boba-ui/styles.css';
 	import Header from '$lib/ui/Header.svelte';
 </script>
 

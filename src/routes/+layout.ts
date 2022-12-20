@@ -22,7 +22,8 @@ const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 auth.onAuthStateChanged((user) => {
+	console.log(`Auth state changed ${user?.email}`)
   if (user) {
-    isSignedIn.update(() => true);
+    isSignedIn.set(true);
   }
 })

@@ -4,30 +4,44 @@
 	import Text from '$lib/ui/boba-ui/Text.svelte';
 
 	import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-    import { goto } from '$app/navigation';
+	import { goto } from '$app/navigation';
+	import { isSignedIn } from '../stores';
 
-    let email: string;
-    let password: string;
+	let email: string;
+	let password: string;
 
 	const onSignIn = () => {
 		const auth = getAuth();
-        if (!email || !password) {
-            return
-        }
+		console.log('signInButtonPressed');
+		if (!email || !password) {
+			return;
+		}
 
 		signInWithEmailAndPassword(auth, email, password)
 			.then((userCredential) => {
 				// Signed in
 				const user = userCredential.user;
-                console.log("Signed In!")
-				goto("/signedin")
+				console.log('Signed In!');
+				goto('/signedin');
 			})
 			.catch((error) => {
 				const errorCode = error.code;
+				if (errorCode == 'auth/user-not-found') {
+					goto('/signup');
+					return;
+				}
 				const errorMessage = error.message;
-				// ..
+				console.log(errorCode);
 			});
 	};
+
+	let page_isSignedIn: boolean;
+
+	isSignedIn.subscribe((value) => {
+		if (value) {
+			goto("/signedin");
+		}
+	});
 </script>
 
 <div class="flex justify-center align-center">

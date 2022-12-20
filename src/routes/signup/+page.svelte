@@ -1,9 +1,11 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import Button from '$lib/ui/boba-ui/Button.svelte';
 	import Card from '$lib/ui/boba-ui/Card.svelte';
 	import Text from '$lib/ui/boba-ui/Text.svelte';
 
 	import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+	import { isSignedIn } from '../stores';
 
     let email: string;
     let password: string;
@@ -19,7 +21,7 @@
 				// Signed in
 				const user = userCredential.user;
                 console.log("Signed Up!")
-				window.location.href = "/"
+				goto("/signedin")
 			})
 			.catch((error) => {
 				const errorCode = error.code;

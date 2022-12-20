@@ -7,7 +7,7 @@
 	let page_isProduction = false;
 	isProduction.subscribe((value) => {
 		page_isProduction = value;
-	})
+	});
 </script>
 
 <div class="app">

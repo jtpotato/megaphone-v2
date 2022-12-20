@@ -1,25 +1,16 @@
 <script>
+	import { goto } from '$app/navigation';
+	import Button from '$lib/ui/boba-ui/Button.svelte';
 	import Link from '$lib/ui/boba-ui/ExternalLink.svelte';
 	import InternalLink from '$lib/ui/boba-ui/InternalLink.svelte';
 	import Text from '$lib/ui/boba-ui/Text.svelte';
-	import Button from '$lib/ui/boba-ui/Button.svelte';
 	import { isSignedIn } from './stores';
 
 	let page_isSignedIn = false;
 
 	isSignedIn.subscribe((value) => {
-		page_isSignedIn;
+		page_isSignedIn = value;
 	});
-
-	const redirToPosts = () => {
-		if (page_isSignedIn) {
-			console.log('signedin');
-			window.location.href = '/';
-			return;
-		}
-		console.log('signedout');
-		window.location.href = '/signedout';
-	};
 </script>
 
 <svelte:head>

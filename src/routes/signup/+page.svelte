@@ -7,21 +7,21 @@
 	import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 	import { isSignedIn } from '../stores';
 
-    let email: string;
-    let password: string;
+	let email: string;
+	let password: string;
 
 	const onSignUp = () => {
 		const auth = getAuth();
-        if (!email || !password) {
-            return
-        }
+		if (!email || !password) {
+			return;
+		}
 
 		createUserWithEmailAndPassword(auth, email, password)
 			.then((userCredential) => {
 				// Signed in
 				const user = userCredential.user;
-                console.log("Signed Up!")
-				goto("/signedin")
+				console.log('Signed Up!');
+				goto('/signedin');
 			})
 			.catch((error) => {
 				const errorCode = error.code;

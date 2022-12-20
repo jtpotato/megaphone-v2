@@ -5,7 +5,7 @@ import { getAuth } from 'firebase/auth';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 import { isSignedIn, userProfile } from './stores';
-import { DocumentSnapshot, doc, getDoc, getFirestore, type DocumentData } from 'firebase/firestore';
+import { doc, getDoc, getFirestore } from 'firebase/firestore';
 
 // dev config
 // Your web app's Firebase configuration
@@ -32,7 +32,7 @@ auth.onAuthStateChanged((user) => {
 
 		(async () => {
 			const docSnap = await getDoc(docRef);
-			const data = docSnap.data()
+			const data = docSnap.data();
 			if (data) {
 				userProfile.set({
 					username: data.username,
@@ -40,7 +40,7 @@ auth.onAuthStateChanged((user) => {
 				});
 			}
 
-			console.log("Read from Firebase");
+			console.log('Read from Firebase');
 		})();
 	}
 });

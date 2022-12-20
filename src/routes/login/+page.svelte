@@ -3,8 +3,8 @@
 	import Card from '$lib/ui/boba-ui/Card.svelte';
 	import Text from '$lib/ui/boba-ui/Text.svelte';
 
-	import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 	import { goto } from '$app/navigation';
+	import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 	import { isSignedIn } from '../stores';
 
 	let email: string;
@@ -39,7 +39,7 @@
 
 	isSignedIn.subscribe((value) => {
 		if (value) {
-			goto("/signedin");
+			goto('/signedin');
 		}
 	});
 </script>

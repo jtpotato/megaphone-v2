@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Card from './Card.svelte';
 
-	export let profilePictureURL: string;
-	export let profileName: string;
+	export let profilePictureURL = '';
+	export let profileName = '';
 	export let profileHandle = '';
 </script>
 

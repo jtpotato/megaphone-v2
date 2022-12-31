@@ -1,9 +1,19 @@
 <script>
 	import '$lib/ui/boba-ui/styles.css';
+	import DevWarning from '$lib/ui/DevWarning.svelte';
 	import Header from '$lib/ui/Header.svelte';
+	import { isProduction } from './stores';
+
+	let page_isProduction = false;
+	isProduction.subscribe((value) => {
+		page_isProduction = value;
+	});
 </script>
 
 <div class="app">
+	{#if !page_isProduction}
+		<DevWarning />
+	{/if}
 	<Header />
 
 	<main>
